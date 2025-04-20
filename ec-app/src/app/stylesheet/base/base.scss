@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "variables" as *;
+
+body {
+  font-family: 'SVN-Gilroy', sans-serif;
+  font-size: map.get($text , base);
+  line-height: 24px;
+}

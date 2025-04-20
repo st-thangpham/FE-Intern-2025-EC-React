@@ -1,0 +1,82 @@
+[
+  {
+    "id": "PR001",
+    "title": "Reflex Plus Adult Cat Food Salmon",
+    "type": "Dog Food",
+    "size": 385,
+    "price": 140000,
+    "bonus": "Free Toy & Free Shacker",
+    "image": "../../../../../src/assets/imgs/product-1.png",
+    "stock": 5
+  },
+  {
+    "id": "PR002",
+    "title": "Reflex Plus Adult Cat Food Salmon",
+    "type": "Cat Food",
+    "size": 1555,
+    "price": 6900000,
+    "bonus": "Free Toy & Free Shacker",
+    "image": "../../../../../src/assets/imgs/product-2.png",
+    "stock": 5
+  },
+  {
+    "id": "PR003",
+    "title": "Cat scratching ball toy kitten sisal rope ball",
+    "type": "Toy",
+    "size": 1000,
+    "price": 1100000,
+    "bonus": "Free Cat Food",
+    "image": "../../../../../src/assets/imgs/product-3.png",
+    "stock": 5
+  },
+  {
+    "id": "PR004",
+    "title": "Cute Pet Cat Warm Nest",
+    "type": "Toy",
+    "size": 1000,
+    "price": 410000,
+    "bonus": "Free Cat Food",
+    "image": "../../../../../src/assets/imgs/product-4.png",
+    "stock": 5
+  },
+  {
+    "id": "PR005",
+    "title": "NaturVet Dogs - Omega-Gold Plus Salmon Oil",
+    "type": "Dog Food",
+    "size": 1000,
+    "price": 350000,
+    "bonus": "Free Toy & Free Shacker",
+    "image": "../../../../../src/assets/imgs/product-5.png",
+    "stock": 5
+  },
+  {
+    "id": "PR006",
+    "title": "Costumes Fashion Pet Clother Cowboy Rider",
+    "type": "Costume",
+    "size": 1500,
+    "price": 500000,
+    "bonus": "Free Toy & Free Shacker",
+    "image": "../../../../../src/assets/imgs/product-6.png",
+    "stock": 5
+  },
+  {
+    "id": "PR007",
+    "title": "Costumes Chicken Drumsti ck Headband",
+    "type": "Costume",
+    "size": 1500,
+    "price": 400000,
+    "bonus": "Free Cat Food",
+    "image": "../../../../../src/assets/imgs/product-7.png",
+    "stock": 5
+  },
+  {
+    "id": "PR008",
+    "title": "Plush Pet Toy",
+    "type": "Toy",
+    "size": 500,
+    "price": 250000,
+    "bonus": "Free Food & Shaker",
+    "image": "../../../../../src/assets/imgs/product-8.png",
+    "stock": 5
+  }
+]

@@ -1,0 +1,271 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.section {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &-title {
+    font-size: map.get($text, lg);
+    font-weight: 700;
+    line-height: 36px;
+    color: map.get($color, primary);
+  }
+
+  &-subtitle {
+    color: map.get($color, black);
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  &-content {
+    padding: 14px 0;
+  }
+
+  &-header .btn {
+    align-self: flex-end;
+  }
+
+  &-footer {
+    display: none;
+  }
+} 
+
+.section.section-products {
+  padding: 46px 0;
+}
+
+
+.section.section-sellers {
+  padding: 32px 0;
+
+  .section-header {
+    padding: 8px 0;
+  }
+
+  .section-info {
+    flex-direction: unset;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title {
+    margin-bottom: 2px;
+  }
+
+  .section-content {
+    padding: 8px 0;
+    height: 112px;
+    align-items: center;
+    
+    .list-sellers {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .list-item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.section.section-banner {
+  position: relative;
+
+  .section-img {
+    display: flex;
+    align-items: stretch;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .section-wrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .section-wrapper.reserved {
+    right: 0;
+    transform: translate(-30%, 0);
+
+    .section-content {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    height: 100%;
+    padding: 0 85px;
+    gap: 8px;
+  }
+
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-transform: capitalize;
+    font-size: map.get($text, 3xl);
+    font-weight: 800;
+    line-height: 68px;
+    color: map.get($color, primary);
+  }
+
+  .section-subtitle {
+    font-size: map.get($text, xl);
+    line-height: 54px;
+    color: map.get($color, primary);
+  }
+
+  .section-description {
+    max-width: 400px;
+    font-size: map.get($text, xs);
+    line-height: 18px;
+    color: map.get($color, text);
+    margin-bottom: 20px;
+  }
+
+  .section-btn {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.section.main-banner {
+  .section-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .section-content {
+    padding: unset;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: map.get($text, 4xl);
+    line-height: 68px;
+  }
+
+  .section-subtitle {
+    font-size: map.get($text, 2xl);
+    line-height: 60px;
+  }
+
+  .section-description {
+    max-width: 500px;
+    font-size: map.get($text, base);
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .section-hiden {
+    display: none;
+  }
+
+  .section {
+    &-header {
+      .btn {
+        display: none;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      width: 100%;
+  
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .section.section-banner {
+    .section-content {
+      justify-content: flex-start;
+    }
+
+    .section-wrapper.reserved {
+      left: 0;
+      right: unset;
+      top: 0;
+      transform: unset;
+      width: 100%;
+    }
+  
+    .section-wrapper.reserved {
+      .section-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 32px 0;
+      }
+    }
+
+    .section-title {
+      font-size: map.get($text, xl);
+      line-height: 54px;
+    }
+  
+    .section-subtitle {
+      font-size: map.get($text, lg);
+      line-height: 36px;
+    }
+  
+    .section-description {
+      max-width: 380px;
+      font-size: map.get($text, xs);
+      line-height: 18px;
+    }
+  }
+
+  .section.main-banner {
+    .section-content {
+      justify-content: unset;
+      padding-top: 139px;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: map.get($text, 2xl);
+      line-height: 60px;
+    }
+
+    .section-subtitle {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    .section-description {
+      max-width: 380px;
+      font-size: map.get($text, xs);
+      line-height: 18px;
+    }
+  }
+}

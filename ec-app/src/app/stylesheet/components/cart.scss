@@ -1,0 +1,154 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.section-cart {
+  padding: 100px 0;
+
+  .section-title {
+    padding: 10px 40px;
+    font-size: map.get($text, xl);
+    border-bottom: 1px solid map.get($color, input);
+  }
+
+  .section-body {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  // Danh sách sản phẩm trong cart
+  .cart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+      border-bottom:  1px solid #eee;
+    }
+
+    .cart-product {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cart-img {
+      width: 70px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cart-title {
+      font-weight: bold;
+      color: map.get($color, text);
+    }
+
+    .cart-detail {
+      font-size: 14px;
+      color: map.get($color, input);
+    }
+
+    .cart-price {
+      color: map.get($color, grey);
+    }
+
+    .cart-subtotal {
+      color: map.get($color, black);
+      font-weight: 600;
+    }
+
+    .cart-quantity input {
+      width: 60px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .cart-remove {
+      text-align: center;
+
+      .btn-remove {
+        background: transparent;
+        border: none;
+        font-size: map.get($text, lg);
+        cursor: pointer;
+        color: map.get($color, black);
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+
+  // Tóm tắt giỏ hàng
+  .cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 30px;
+    gap: 50px;
+    background-color: map.get($color, secondary);
+
+    .summary-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: map.get($color, text);
+    }
+
+    .summary-details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 16px;
+      padding: 0 10px;
+
+      .summary-detail {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .summary-value {
+        font-weight: 600;
+      }
+    }
+
+    .summary-action {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .btn-checkout {
+        padding: 12px 24px;
+        font-size: map.get($text, lg);
+        font-weight: 700;
+        background-color: transparent;
+        color: map.get($color, primary-dark);
+        border-radius: 10px;
+        border: 2px solid map.get($color, primary-dark);
+        cursor: pointer;
+
+        &:hover {
+          color: map.get($color, white);
+          background-color: map.get($color, primary-dark);
+        }
+      }
+    }
+  }
+}

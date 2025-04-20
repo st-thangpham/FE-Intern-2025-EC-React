@@ -1,0 +1,86 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+  background-color: map.get($color, secondary);
+
+  &-action {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    gap: 40px;
+    border-bottom: 1px solid rgba(204, 209, 210, 1);
+  }
+
+  &-form {
+    display: flex;
+    width: 100%;
+    padding: 32px;
+    gap: 20px;
+    border-radius: 14px;
+    background-color: map.get($color, primary);
+
+    .form-title {
+      text-align: left;
+      text-transform: capitalize;
+      font-size: map.get($text, lg);
+      font-weight: 700;
+      line-height: 36px;
+      color: map.get($color, white);
+    }
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-social {
+    .list-social {
+      display: flex;
+      gap: 40px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    font-size: map.get($text, sm);
+    line-height: 20px;
+    color: map.get($color, grey);
+  }
+
+  &-logo {
+    margin: 0 auto;
+  }
+
+  &-policy {
+    .list-policy {
+      display: flex;
+      gap: 30px;
+    }
+
+    .policy {
+      font-size: map.get($text, sm);
+      line-height: 20px;
+      color: map.get($color, grey);
+    }
+  }
+}
+
+

@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.form {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  background-color: map.get($color, white);
+  color: map.get($color, input);
+  gap: 12px;
+
+  input {
+    border: none;
+    font-size: map.get($text, sm);
+    line-height: 20px;
+  }
+}
+
+.form.form-search {
+  width: 280px;
+  height: auto;
+  padding: 12px 18px;
+  border-radius: 46px;
+}
+
+.form-register {
+  width: 900px;
+  height: auto;
+  padding: 12px;
+  border-radius: 14px;
+
+  input {
+    flex: 1;
+    border: 1px solid rgba(153, 162, 165, 1);
+    border-radius: 8px;
+    padding: 14px 28px;
+  }
+
+  .btn {
+    border-radius: 8px;
+  }
+}

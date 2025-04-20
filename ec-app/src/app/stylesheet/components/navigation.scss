@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.navigation {
+  .list-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+  
+    .nav {
+      color: map.get($color, black);
+    }
+  }
+} 
