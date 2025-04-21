@@ -14,7 +14,7 @@
     // bỏ btn trong này tạm thời vì ch merge với code chứa component btn
     .btn-add {
       position: absolute;
-      bottom: 20px;
+      bottom: 16px;
       left: 10px;
       padding: 12px 28px;
       background-color: map.get($color, action);
@@ -37,7 +37,6 @@
 
   &-img {
     width: 100%;
-    margin-bottom: 8px;
     border-radius: 10px;
   }
 
