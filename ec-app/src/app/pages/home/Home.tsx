@@ -3,7 +3,7 @@ import BannerReserved from './components/BannerReserved';
 import Knowledge from './components/Knowledge';
 import MainBanner from './components/MainBanner';
 import Pet from './components/Pet';
-import Product from './components/Product';
+import ProductList from './components/ProductList';
 import Seller from './components/Seller';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
       <MainBanner />
       <Pet />
       <BannerReserved />
-      <Product />
+      <ProductList />
       <Seller />
       <Banner />
       <Knowledge />

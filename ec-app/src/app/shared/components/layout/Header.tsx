@@ -6,6 +6,7 @@ import SearchIcon from '../../../../assets/icons/icon_search.svg';
 import CartIcon from '../../../../assets/icons/icon-cart.svg';
 import CurrencyFlag from '../../../../assets/icons/icon-flag.svg';
 import DownIcon from '../../../../assets/icons/icon-down.svg'
+import CartBadge from '../components/Cartbadge';
 
 const Header: React.FC = () => {
   return (
@@ -66,9 +67,7 @@ const Header: React.FC = () => {
           <div className='header-cart'>
             <Link to='/cart'>
               <img src={CartIcon} alt='Cart Icon' />
-              <span id='cart-count' className='cart-badge'>
-                0
-              </span>
+              <CartBadge />
             </Link>
           </div>
 
