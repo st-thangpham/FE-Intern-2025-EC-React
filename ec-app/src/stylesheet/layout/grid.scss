@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.row {
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    width: calc((100% - (12 / $i - 1) * #{$gap}) / (12 / $i));
+  }
+}
+
+@media screen and (max-width: $width-tablet) {
+  .row {
+    gap: $gap-md;
+  }
+
+  @for $i from 1 through $columns {
+    .col-md-#{$i} {
+      width: calc((100% - (12 / $i - 1) * #{$gap-md}) / (12 / $i));
+    }
+  }
+}
+
+// Breakpoints
+@media screen and (max-width: $width-mobile) {
+  .row {
+    gap: $gap-sm;
+  }
+
+  @for $i from 1 through $columns {
+    .col-sm-#{$i} {
+      width: calc((100% - (12 / $i - 1) * #{$gap-sm}) / (12 / $i));
+    }
+  }
+}

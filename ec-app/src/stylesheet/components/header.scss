@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "../base/all" as *;
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &-nav {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    gap: 48px;
+    .list-nav {
+      .nav {
+        font-weight: 700;
+        color: map.get($color, primary);
+      }
+    }
+  }
+
+  &-action {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .switcher-currency {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: map.get($color, primary-dark);
+  }
+
+  &-btn .btn {
+    font-weight: 700;
+  }
+
+  .header-cart {
+    position: relative;
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -15px;
+      line-height: 18px;
+      padding: 0 10px;
+      font-size: map.get($text, xxs);
+      background-color: map.get($color, action);
+      color: map.get($color, white);
+      border-radius: 999px;
+    }
+    
+  }
+}

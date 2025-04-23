@@ -1,0 +1,35 @@
+/* Colors and Styles (Defauly) */
+$color: (
+  primary: #003459,
+  secondary: #fceed5,
+  state: #00a7e7,
+  action: #ff7f50,
+  white: #fdfdfd,
+  black: #00171f,
+  grey: #667479,
+  text: #242b33,
+  input: #99a2A5,
+  primary-dark: #002a48,
+);
+
+/* Font and Typography */
+$text: (
+  4xl: 60px,
+  3xl: 52px,
+  2xl: 46px,
+  xl: 36px,
+  lg: 24px,
+  base: 16px,
+  sm: 14px,
+  xs: 12px,
+  xxs: 10px,
+);
+
+/* Grid */
+$columns: 12;
+$gap: 20px;
+$gap-md: 16px;
+$gap-sm: 12px;
+
+$width-mobile: 576px;
+$width-tablet: 768px;
