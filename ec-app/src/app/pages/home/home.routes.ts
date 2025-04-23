@@ -1,11 +1,11 @@
-import React from "react";
-import { RouteObject } from "react-router-dom";
+import React from 'react';
+import { RouteObject } from 'react-router-dom';
 
-import Home from "./Home";
+import Home from './Home';
 
 const homeRoutes: RouteObject[] = [
   {
-    path: "/",
+    path: '/',
     element: React.createElement(Home),
   },
 ];

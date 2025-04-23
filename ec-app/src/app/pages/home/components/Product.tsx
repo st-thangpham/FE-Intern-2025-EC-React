@@ -36,68 +36,68 @@ const Product: React.FC = () => {
   }, []);
 
   return (
-    <section className='section section-products'>
-      <div className='container'>
-        <div className='section-header'>
-          <div className='section-info'>
-            <p className='section-subtitle'>
+    <section className="section section-products">
+      <div className="container">
+        <div className="section-header">
+          <div className="section-info">
+            <p className="section-subtitle">
               Hard to choose right products for your pets?
             </p>
-            <h2 className='section-title'>Our Products</h2>
+            <h2 className="section-title">Our Products</h2>
           </div>
-          <button className='btn btn-outline'>
+          <button className="btn btn-outline">
             <span>View more</span>
-            <img src={RightIcon} alt='View more' />
+            <img src={RightIcon} alt="View more" />
           </button>
         </div>
 
-        <div className='section-content'>
-          <ul className='list list-products row' id='list-products'>
+        <div className="section-content">
+          <ul className="list list-products row" id="list-products">
             {products.map((product) => (
-              <li key={product.id} className='list-item col-3 col-sm-6'>
-                <div className='card card-product'>
-                  <div className='card-media img-1x1'>
+              <li key={product.id} className="list-item col-3 col-sm-6">
+                <div className="card card-product">
+                  <div className="card-media img-1x1">
                     <img
-                      className='card-img'
+                      className="card-img"
                       src={product.image}
                       alt={product.title}
                     />
                     <button
                       id={`product-${product.id}`}
-                      className='btn-add'
+                      className="btn-add"
                       disabled={product.stock <= 0}
                     >
                       {product.stock > 0 ? 'Add to cart' : 'Out of stock'}
                     </button>
                   </div>
 
-                  <div className='card-information'>
-                    <Link to='/' className='card-body'>
-                      <h3 className='card-title'>{product.title}</h3>
-                      <p className='card-details'>
-                        <span className='card-label'>
+                  <div className="card-information">
+                    <Link to="/" className="card-body">
+                      <h3 className="card-title">{product.title}</h3>
+                      <p className="card-details">
+                        <span className="card-label">
                           Product:{' '}
-                          <span className='card-content'>{product.type}</span>
+                          <span className="card-content">{product.type}</span>
                         </span>
-                        <span className='detail-dot'>●</span>
-                        <span className='card-label'>
+                        <span className="detail-dot">●</span>
+                        <span className="card-label">
                           Size:{' '}
-                          <span className='card-content'>
+                          <span className="card-content">
                             {formatSize(product.size)}
                           </span>
                         </span>
                       </p>
-                      <p className='card-value'>{formatPrice(product.price)}</p>
+                      <p className="card-value">{formatPrice(product.price)}</p>
                     </Link>
 
-                    <div className='card-footer'>
+                    <div className="card-footer">
                       <img
-                        className='card-icon'
+                        className="card-icon"
                         src={GiftIcon}
-                        alt='Gift Icon'
+                        alt="Gift Icon"
                       />
-                      <span className='detail-dot'>●</span>
-                      <span className='card-attached'>{product.bonus}</span>
+                      <span className="detail-dot">●</span>
+                      <span className="card-attached">{product.bonus}</span>
                     </div>
                   </div>
                 </div>

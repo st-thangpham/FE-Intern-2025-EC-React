@@ -7,7 +7,7 @@ const Page: React.FC = () => {
   return (
     <>
       <Header />
-      <main className='main'>
+      <main className="main">
         <Outlet />
       </main>
       <Footer />
