@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CartItemType, Product } from '../../../shared/models/types';
 import { formatPrice } from '../../../core/helpers/utils';
-import { useCart  } from '../../../shared/contexts/CartContext';
+import { useCart } from '../../../shared/contexts/CartContext';
 
 interface Props {
   item: CartItemType;
@@ -28,7 +28,6 @@ const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
       updateQuantity(item.product.id, newQuantity);
       onCartChange?.();
     }
-
   };
 
   const handleRemove = () => {
@@ -42,7 +41,11 @@ const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
   return (
     <li className="cart-item">
       <div className="cart-product">
-        <img className="cart-img" src={item.product.image} alt={item.product.title} />
+        <img
+          className="cart-img"
+          src={item.product.image}
+          alt={item.product.title}
+        />
         <div className="cart-info">
           <h3 className="cart-title">{item.product.title}</h3>
           <p className="cart-detail">{item.product.type}</p>

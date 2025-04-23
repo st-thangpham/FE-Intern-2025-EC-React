@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import { useCart } from '../../../shared/contexts/CartContext';
 
 const CartList: React.FC = () => {
-  const { items, } = useCart();
+  const { items } = useCart();
 
   return (
     <>

@@ -1,11 +1,11 @@
-import React from "react";
-import { RouteObject } from "react-router-dom";
+import React from 'react';
+import { RouteObject } from 'react-router-dom';
 
-import Cart from "./Cart";
+import Cart from './Cart';
 
 const cartRoutes: RouteObject[] = [
   {
-    path: "/cart",
+    path: '/cart',
     element: React.createElement(Cart),
   },
 ];

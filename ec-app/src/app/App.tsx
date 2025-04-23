@@ -1,6 +1,5 @@
-import { useRoutes } from "react-router-dom";
-import appRoutes from "./app.routes";
-import { CartProvider } from "./shared/contexts/CartContext";
+import { useRoutes } from 'react-router-dom';
+import appRoutes from './app.routes';
 
 function App() {
   const routing = useRoutes(appRoutes);

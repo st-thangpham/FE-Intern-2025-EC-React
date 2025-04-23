@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import BlogImg from '../../../../assets/imgs/blog1.png'
-import RightIcon from '../../../../assets/icons/icon-right.svg'
+import BlogImg from '../../../../assets/imgs/blog1.png';
+import RightIcon from '../../../../assets/icons/icon-right.svg';
 
 const Knowledge: React.FC = () => {
-  return(
+  return (
     <section className="section section-products">
       <div className="container">
         <div className="section-header">
@@ -14,7 +14,7 @@ const Knowledge: React.FC = () => {
           </div>
           <button className="btn btn-outline">
             <span>View more</span>
-            <img src={RightIcon} alt="Left button"/>
+            <img src={RightIcon} alt="Left button" />
           </button>
         </div>
         <div className="section-content">
@@ -22,17 +22,25 @@ const Knowledge: React.FC = () => {
             <li className="list-item col-4 col-sm-12">
               <a className="card" href="/">
                 <div className="card-media img-3x2">
-                  <img className="card-img" src={BlogImg} alt="Knowledge Image"/>
+                  <img
+                    className="card-img"
+                    src={BlogImg}
+                    alt="Knowledge Image"
+                  />
                 </div>
                 <div className="card-information">
                   <div className="card-tag">
                     <span>Pet knowledge</span>
                   </div>
                   <div className="card-body">
-                    <h3 className="card-title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+                    <h3 className="card-title">
+                      What is a Pomeranian? How to Identify Pomeranian Dogs
+                    </h3>
                     <p className="card-description">
-                      The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the
-                      cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.
+                      The Pomeranian, also known as the Pomeranian (Pom dog), is
+                      always in the top of the cutest pets. Not only that, the
+                      small, lovely, smart, friendly, and skillful circus dog
+                      breed.
                     </p>
                   </div>
                 </div>
@@ -41,17 +49,25 @@ const Knowledge: React.FC = () => {
             <li className="list-item col-4 col-sm-12">
               <a className="card" href="/">
                 <div className="card-media img-3x2">
-                  <img className="card-img" src={BlogImg} alt="Knowledge Image"/>
+                  <img
+                    className="card-img"
+                    src={BlogImg}
+                    alt="Knowledge Image"
+                  />
                 </div>
                 <div className="card-information">
                   <div className="card-tag">
                     <span>Pet knowledge</span>
                   </div>
                   <div className="card-body">
-                    <h3 className="card-title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+                    <h3 className="card-title">
+                      What is a Pomeranian? How to Identify Pomeranian Dogs
+                    </h3>
                     <p className="card-description">
-                      The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the
-                      cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.
+                      The Pomeranian, also known as the Pomeranian (Pom dog), is
+                      always in the top of the cutest pets. Not only that, the
+                      small, lovely, smart, friendly, and skillful circus dog
+                      breed.
                     </p>
                   </div>
                 </div>
@@ -60,17 +76,25 @@ const Knowledge: React.FC = () => {
             <li className="list-item col-4 col-sm-12">
               <a className="card" href="/">
                 <div className="card-media img-3x2">
-                  <img className="card-img" src={BlogImg} alt="Knowledge Image"/>
+                  <img
+                    className="card-img"
+                    src={BlogImg}
+                    alt="Knowledge Image"
+                  />
                 </div>
                 <div className="card-information">
                   <div className="card-tag">
                     <span>Pet knowledge</span>
                   </div>
                   <div className="card-body">
-                    <h3 className="card-title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+                    <h3 className="card-title">
+                      What is a Pomeranian? How to Identify Pomeranian Dogs
+                    </h3>
                     <p className="card-description">
-                      The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the
-                      cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.
+                      The Pomeranian, also known as the Pomeranian (Pom dog), is
+                      always in the top of the cutest pets. Not only that, the
+                      small, lovely, smart, friendly, and skillful circus dog
+                      breed.
                     </p>
                   </div>
                 </div>
@@ -80,6 +104,6 @@ const Knowledge: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 export default Knowledge;
