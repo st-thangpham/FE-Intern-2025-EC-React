@@ -1,6 +1,7 @@
-import Footer from '../../app/shared/components/layout/Footer';
-import Header from '../../app/shared/components/layout/Header';
 import React from 'react';
+
+import Footer from '@shared/components/layout/Footer';
+import Header from '@shared/components/layout/Header';
 import { Outlet } from 'react-router-dom';
 
 const Page: React.FC = () => {

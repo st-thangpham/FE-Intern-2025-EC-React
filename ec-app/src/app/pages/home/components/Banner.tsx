@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BannerImg from '../../../../assets/imgs/banner-2.png';
-import PlayIcon from '../../../../assets/icons/icon-play.svg';
+import BannerImg from '@assets/imgs/banner-2.png';
+import PlayIcon from '@assets/icons/icon-play.svg';
 
 const Banner: React.FC = () => {
   return (

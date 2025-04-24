@@ -1,38 +1,24 @@
-// src/app/shared/components/products/Products.tsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import GiftIcon from '../../../../assets/icons/icon-gift.svg';
-import RightIcon from '../../../../assets/icons/icon-right.svg';
+import { addItem } from '@shared/redux/cartActions';
+import { useDispatch } from 'react-redux';
 
-// Kiểu dữ liệu cho sản phẩm
-interface Product {
-  id: string;
-  title: string;
-  type: string;
-  size: number;
-  price: number;
-  bonus: string;
-  image: string;
-  stock: number;
-}
+import { formatPrice, formatSize } from '@core/helpers/utils';
+import { Product } from '@shared/models/types';
 
-const formatPrice = (price: number): string =>
-  new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(
-    price
-  );
+import GiftIcon from '@assets/icons/icon-gift.svg';
+import RightIcon from '@assets/icons/icon-right.svg';
 
-const formatSize = (size: number): string =>
-  size >= 1000 ? `${size / 1000}kg` : `${size}g`;
-
-const Product: React.FC = () => {
+const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch('/data/products.json')
       .then((res) => res.json())
       .then((data: Product[]) => setProducts(data))
-      .catch(console.error);
+      .catch((error) => console.error('Failed to load products:', error));
   }, []);
 
   return (
@@ -65,9 +51,14 @@ const Product: React.FC = () => {
                     <button
                       id={`product-${product.id}`}
                       className="btn-add"
-                      disabled={product.stock <= 0}
+                      onClick={() => {
+                        dispatch(addItem(product, 1));
+                        window.alert(
+                          `${product.title} đã được thêm vào giỏ hàng 🛒`
+                        );
+                      }}
                     >
-                      {product.stock > 0 ? 'Add to cart' : 'Out of stock'}
+                      Add to cart
                     </button>
                   </div>
 
@@ -110,4 +101,4 @@ const Product: React.FC = () => {
   );
 };
 
-export default Product;
+export default ProductList;
