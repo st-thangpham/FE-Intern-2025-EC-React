@@ -1,9 +1,20 @@
 import React from 'react';
-import { useCart } from '@shared/contexts/CartContext';
+
+import { RootState } from '@shared/redux/store';
+import { useSelector } from 'react-redux';
+
 import { formatPrice } from '@core/helpers/utils';
 
 const CartSummary: React.FC = () => {
-  const { totalQuantity, totalPrice } = useCart();
+  const items = useSelector((state: RootState) => state.cart.items);
+  const totalQuantity = items.reduce(
+    (sum: number, item: any) => sum + item.quantity,
+    0
+  );
+  const totalPrice = items.reduce(
+    (sum: number, item: any) => sum + item.product.price * item.quantity,
+    0
+  );
 
   return (
     <div className="cart-summary">

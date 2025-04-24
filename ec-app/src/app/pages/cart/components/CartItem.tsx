@@ -1,54 +1,43 @@
-import React, { useRef } from 'react';
-import { CartItemType } from '@shared/models/types';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { formatPrice } from '@core/helpers/utils';
-import { useCart } from '@shared/contexts/CartContext';
+import { CartItemType } from '@shared/models/types';
+import { removeItem, updateQuantity } from '@shared/redux/cartActions';
 
 interface Props {
   item: CartItemType;
-  onCartChange?: () => void;
 }
 
-const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const { removeItem, updateQuantity } = useCart();
-
-  const handleQuantityUpdate = () => {
-    const value = inputRef.current?.value || '1';
-    const newQuantity = parseInt(value);
-
-    if (isNaN(newQuantity)) {
-      inputRef.current!.value = '1';
-      updateQuantity(item.product.id, 1);
-      onCartChange?.();
-      return;
-    }
-
-    if (newQuantity < 1) {
-      const confirmed = window.confirm('Do you want to delete the item?');
-      if (confirmed) {
-        removeItem(item.product.id);
-        onCartChange?.();
-      } else {
-        inputRef.current!.value = item.quantity.toString();
-      }
-    } else {
-      if (newQuantity !== item.quantity) {
-        updateQuantity(item.product.id, newQuantity);
-        onCartChange?.();
-      }
-    }
-  };
+const CartItem: React.FC<Props> = ({ item }) => {
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(item.quantity.toString());
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    handleQuantityUpdate();
+    const value = e.target.value;
+    setQuantity(value);
+
+    const parsed = parseInt(value);
+    if (value === '') return; // cho phép xóa rỗng tạm thời
+
+    if (isNaN(parsed)) return;
+
+    if (parsed < 1) {
+      const confirmed = window.confirm('Do you want to delete the item?');
+      if (confirmed) {
+        dispatch(removeItem(item.product.id));
+      } else {
+        setQuantity(item.quantity.toString());
+      }
+    } else {
+      dispatch(updateQuantity(item.product.id, parsed));
+    }
   };
 
   const handleRemove = () => {
     const confirmed = window.confirm('Do you want to delete the item?');
     if (confirmed) {
-      removeItem(item.product.id);
-      onCartChange?.();
+      dispatch(removeItem(item.product.id));
     }
   };
 
@@ -66,22 +55,21 @@ const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
         </div>
       </div>
       <div className="cart-price">{formatPrice(item.product.price)}</div>
+
       <div className="cart-quantity">
         <input
           className="quantity"
           type="number"
-          min={0}
-          defaultValue={item.quantity}
-          ref={inputRef}
+          min={1}
+          value={quantity}
           onChange={handleChange}
         />
       </div>
+
       <div className="cart-subtotal">
-        {formatPrice(
-          item.product.price *
-            (parseInt(inputRef.current?.value || '') || item.quantity)
-        )}
+        {formatPrice(item.product.price * (parseInt(quantity) || 1))}
       </div>
+
       <div className="cart-remove">
         <button className="btn-remove" onClick={handleRemove}>
           🗑

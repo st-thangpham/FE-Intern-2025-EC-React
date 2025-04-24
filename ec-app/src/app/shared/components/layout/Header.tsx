@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { useCart } from '@shared/contexts/CartContext';
+import { useSelector } from 'react-redux';
+import { RootState } from '@shared/redux/store';
 
 import CartIcon from '@assets/icons/icon-cart.svg';
 import DownIcon from '@assets/icons/icon-down.svg';
@@ -10,7 +10,12 @@ import SearchIcon from '@assets/icons/icon_search.svg';
 import MonitoLogo from '@assets/imgs/monito-logo.png';
 
 const Header: React.FC = () => {
-  const { totalQuantity } = useCart();
+  const items = useSelector((state: RootState) => state.cart.items);
+
+  const totalQuantity = items.reduce(
+    (sum: number, item: any) => sum + item.quantity,
+    0
+  );
 
   return (
     <header className="header">

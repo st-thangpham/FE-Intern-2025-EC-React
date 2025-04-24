@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Product } from '@shared/models/types';
+import { addItem } from '@shared/redux/cartActions';
+import { useDispatch } from 'react-redux';
+
 import { formatPrice, formatSize } from '@core/helpers/utils';
-import { useCart } from '@shared/contexts/CartContext';
+import { Product } from '@shared/models/types';
 
 import GiftIcon from '@assets/icons/icon-gift.svg';
 import RightIcon from '@assets/icons/icon-right.svg';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const { addItem } = useCart();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch('/data/products.json')
@@ -49,15 +51,14 @@ const ProductList: React.FC = () => {
                     <button
                       id={`product-${product.id}`}
                       className="btn-add"
-                      disabled={product.stock <= 0}
                       onClick={() => {
-                        addItem(product);
+                        dispatch(addItem(product, 1));
                         window.alert(
                           `${product.title} đã được thêm vào giỏ hàng 🛒`
                         );
                       }}
                     >
-                      {product.stock > 0 ? 'Add to cart' : 'Out of stock'}
+                      Add to cart
                     </button>
                   </div>
 
