@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MonitorLogo from '../../../../assets/imgs/monito-logo.png';
-import FacebookIcon from '../../../../assets/icons/icon-facebook.svg';
-import TwitterIcon from '../../../../assets/icons/icon-twitter.svg';
-import InstagramIcon from '../../../../assets/icons/icon-instagram.svg';
-import YoutubeIcon from '../../../../assets/icons/icon-youtube.svg';
+import MonitorLogo from '@assets/imgs/monito-logo.png';
+import FacebookIcon from '@assets/icons/icon-facebook.svg';
+import TwitterIcon from '@assets/icons/icon-twitter.svg';
+import InstagramIcon from '@assets/icons/icon-instagram.svg';
+import YoutubeIcon from '@assets/icons/icon-youtube.svg';
 
 const Footer: React.FC = () => {
   return (

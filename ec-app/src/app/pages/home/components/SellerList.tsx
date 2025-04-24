@@ -1,9 +1,9 @@
 import React from 'react';
 
-import SellerImg from '../../../../assets/imgs/seller-logo.png';
-import RightIcon from '../../../../assets/icons/icon-right.svg';
+import SellerImg from '@assets/imgs/seller-logo.png';
+import RightIcon from '@assets/icons/icon-right.svg';
 
-const Seller: React.FC = () => {
+const SellerList: React.FC = () => {
   return (
     <section className="section section-sellers">
       <div className="container">
@@ -88,4 +88,4 @@ const Seller: React.FC = () => {
     </section>
   );
 };
-export default Seller;
+export default SellerList;

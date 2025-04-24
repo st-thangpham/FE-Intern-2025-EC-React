@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MainBannerImage from '../../../../assets/imgs/hero-banner.png';
-import PlayIcon from '../../../../assets/icons/icon-play.svg';
+import MainBannerImage from '@assets/imgs/hero-banner.png';
+import PlayIcon from '@assets/icons/icon-play.svg';
 
 const MainBanner: React.FC = () => {
   return (

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MonitoLogo from '../../../../assets/imgs/monito-logo.png';
-import SearchIcon from '../../../../assets/icons/icon_search.svg';
-import CartIcon from '../../../../assets/icons/icon-cart.svg';
-import CurrencyFlag from '../../../../assets/icons/icon-flag.svg';
-import DownIcon from '../../../../assets/icons/icon-down.svg';
+import { useCart } from '@shared/contexts/CartContext';
+
+import CartIcon from '@assets/icons/icon-cart.svg';
+import DownIcon from '@assets/icons/icon-down.svg';
+import CurrencyFlag from '@assets/icons/icon-flag.svg';
+import SearchIcon from '@assets/icons/icon_search.svg';
+import MonitoLogo from '@assets/imgs/monito-logo.png';
 
 const Header: React.FC = () => {
+  const { totalQuantity } = useCart();
+
   return (
     <header className="header">
       <div className="container">
@@ -66,8 +70,8 @@ const Header: React.FC = () => {
           <div className="header-cart">
             <Link to="/cart">
               <img src={CartIcon} alt="Cart Icon" />
-              <span id="cart-count" className="cart-badge">
-                0
+              <span id="cart-badge" className="cart-badge">
+                {totalQuantity}
               </span>
             </Link>
           </div>

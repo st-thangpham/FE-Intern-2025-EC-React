@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BlogImg from '../../../../assets/imgs/blog1.png';
-import RightIcon from '../../../../assets/icons/icon-right.svg';
+import BlogImg from '@assets/imgs/blog1.png';
+import RightIcon from '@assets/icons/icon-right.svg';
 
 const Knowledge: React.FC = () => {
   return (
