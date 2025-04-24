@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCart } from '../../../shared/contexts/CartContext';
-import { formatPrice } from '../../../core/helpers/utils';
+import { useCart } from '@shared/contexts/CartContext';
+import { formatPrice } from '@core/helpers/utils';
 
 const CartSummary: React.FC = () => {
   const { totalQuantity, totalPrice } = useCart();

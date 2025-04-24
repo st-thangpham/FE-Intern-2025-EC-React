@@ -1,19 +1,20 @@
+import React from 'react';
 import Banner from './components/Banner';
 import BannerReserved from './components/BannerReserved';
 import Knowledge from './components/Knowledge';
 import MainBanner from './components/MainBanner';
-import Pet from './components/Pet';
+import PetList from './components/PetList';
 import ProductList from './components/ProductList';
-import Seller from './components/Seller';
+import SellerList from './components/SellerList';
 
 const Home = () => {
   return (
     <>
       <MainBanner />
-      <Pet />
+      <PetList />
       <BannerReserved />
       <ProductList />
-      <Seller />
+      <SellerList />
       <Banner />
       <Knowledge />
     </>

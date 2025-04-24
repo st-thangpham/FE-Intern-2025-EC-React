@@ -1,3 +1,4 @@
+import React from 'react';
 import CartList from './components/CartList';
 import CartSummary from './components/CartSummary';
 

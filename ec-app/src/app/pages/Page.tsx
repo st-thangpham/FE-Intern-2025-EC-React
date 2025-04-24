@@ -1,8 +1,10 @@
-import Footer from '../../app/shared/components/layout/Footer';
-import Header from '../../app/shared/components/layout/Header';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { CartProvider } from '../shared/contexts/CartContext';
+
+import Footer from '@shared/components/layout/Footer';
+import Header from '@shared/components/layout/Header';
+
+import { CartProvider } from '@shared/contexts/CartContext';
 
 const Page: React.FC = () => {
   return (

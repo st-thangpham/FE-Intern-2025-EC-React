@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Product } from '../../../shared/models/types';
-import { formatPrice, formatSize } from '../../../core/helpers/utils';
-import { useCart } from '../../../shared/contexts/CartContext';
+import { Product } from '@shared/models/types';
+import { formatPrice, formatSize } from '@core/helpers/utils';
+import { useCart } from '@shared/contexts/CartContext';
 
-import GiftIcon from '../../../../assets/icons/icon-gift.svg';
-import RightIcon from '../../../../assets/icons/icon-right.svg';
+import GiftIcon from '@assets/icons/icon-gift.svg';
+import RightIcon from '@assets/icons/icon-right.svg';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

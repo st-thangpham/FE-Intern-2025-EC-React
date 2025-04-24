@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { CartItemType, Product } from '../../../shared/models/types';
-import { formatPrice } from '../../../core/helpers/utils';
-import { useCart } from '../../../shared/contexts/CartContext';
+import React, { useRef } from 'react';
+import { CartItemType } from '@shared/models/types';
+import { formatPrice } from '@core/helpers/utils';
+import { useCart } from '@shared/contexts/CartContext';
 
 interface Props {
   item: CartItemType;
@@ -9,11 +9,19 @@ interface Props {
 }
 
 const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
-  const [quantity, setQuantity] = useState(item.quantity);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { removeItem, updateQuantity } = useCart();
 
-  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newQuantity = parseInt(e.target.value);
+  const handleQuantityUpdate = () => {
+    const value = inputRef.current?.value || '1';
+    const newQuantity = parseInt(value);
+
+    if (isNaN(newQuantity)) {
+      inputRef.current!.value = '1';
+      updateQuantity(item.product.id, 1);
+      onCartChange?.();
+      return;
+    }
 
     if (newQuantity < 1) {
       const confirmed = window.confirm('Do you want to delete the item?');
@@ -21,13 +29,19 @@ const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
         removeItem(item.product.id);
         onCartChange?.();
       } else {
-        setQuantity(quantity);
+        inputRef.current!.value = item.quantity.toString();
       }
     } else {
-      setQuantity(newQuantity);
-      updateQuantity(item.product.id, newQuantity);
-      onCartChange?.();
+      if (newQuantity !== item.quantity) {
+        updateQuantity(item.product.id, newQuantity);
+        onCartChange?.();
+      }
     }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    handleQuantityUpdate();
   };
 
   const handleRemove = () => {
@@ -57,13 +71,16 @@ const CartItem: React.FC<Props> = ({ item, onCartChange }) => {
           className="quantity"
           type="number"
           min={0}
-          max={item.product.stock}
-          value={quantity}
-          onChange={handleQuantityChange}
+          defaultValue={item.quantity}
+          ref={inputRef}
+          onChange={handleChange}
         />
       </div>
       <div className="cart-subtotal">
-        {formatPrice(item.product.price * quantity)}
+        {formatPrice(
+          item.product.price *
+            (parseInt(inputRef.current?.value || '') || item.quantity)
+        )}
       </div>
       <div className="cart-remove">
         <button className="btn-remove" onClick={handleRemove}>

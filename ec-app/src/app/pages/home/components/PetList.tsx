@@ -1,9 +1,9 @@
 import React from 'react';
 
-import PetImg from '../../../../assets/imgs/pet-1.png';
-import RightIcon from '../../../../assets/icons/icon-right.svg';
+import PetImg from '@assets/imgs/pet-1.png';
+import RightIcon from '@assets/icons/icon-right.svg';
 
-const Pet: React.FC = () => {
+const PetList: React.FC = () => {
   return (
     <section className="section section-products">
       <div className="container">
@@ -217,4 +217,4 @@ const Pet: React.FC = () => {
     </section>
   );
 };
-export default Pet;
+export default PetList;
